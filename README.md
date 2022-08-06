@@ -4,6 +4,27 @@ A package that has a collection of unspent p2wsh transactions. Useful to see wha
 
 ## Library
 
+Create the P2WSH instance and get a list of UTXOs
+
+```rust
+let results = UTXOResults::new().results();
+```
+
+Create a UTXO and get an SCID from it
+
+```rust
+let utxo1 = UTXO {
+    id: None,
+    block_height: 1,
+    block_index: 1,
+    transaction_index: 0,
+    amount: None,
+};
+
+assert_eq!(760542088613330945, utxo1.scid());
+```
+
+
 ## Binary
 
 The binary included is used to pull in the datasets and produce json or binary files as a result. 
